@@ -166,26 +166,44 @@ img {
 /* ---------- hero (home) ---------- */
 
 .hero {
-  padding: 88px 0 48px;
+  padding: 56px 0 48px;
 }
 
-.hero h1 {
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.08;
-  margin: 0 0 20px;
-  max-width: 16ch;
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.hero-photo {
+  flex: 0 0 340px;
+}
+
+.hero-photo img {
+  border-radius: 6px;
+  width: 100%;
+  height: auto;
+}
+
+.hero-content {
+  flex: 1;
 }
 
 .hero p {
-  font-size: 17px;
-  color: var(--text-secondary);
-  max-width: 52ch;
-  margin: 0 0 32px;
+  font-size: 18px;
+  color: var(--text-primary);
+  max-width: 46ch;
+  margin: 0 0 28px;
+  line-height: 1.5;
 }
 
-@media (max-width: 640px) {
-  .hero h1 { font-size: 34px; }
+@media (max-width: 760px) {
+  .hero-layout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  .hero-photo { flex-basis: auto; width: 100%; max-width: 320px; }
 }
 
 .btn {
@@ -296,24 +314,27 @@ img {
 /* ---------- board grid ---------- */
 
 .board-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px 24px;
   padding: 40px 0 72px;
 }
 
-@media (max-width: 900px) {
-  .board-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.board-member {
+  width: 200px;
+  text-align: center;
 }
 
 @media (max-width: 640px) {
-  .board-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; }
+  .board-grid { gap: 28px 16px; }
+  .board-member { width: 140px; }
 }
 
 .board-member .img-placeholder {
   border-radius: 50%;
   aspect-ratio: 1 / 1;
-  margin-bottom: 14px;
+  margin: 0 auto 14px;
 }
 
 .board-member h3 {
@@ -345,7 +366,7 @@ img {
 
 /* ---------- featured page ---------- */
 
-.season-label {
+.theme-label {
   font-size: 13px;
   color: var(--accent);
   margin: 0 0 6px;
@@ -374,7 +395,49 @@ img {
   color: var(--accent);
 }
 
-/* ---------- empty state (archive / interviews / commercial) ---------- */
+/* ---------- commercial services ---------- */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 40px 0 24px;
+}
+
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+.service-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 22px;
+  background: var(--bg-card);
+}
+
+.service-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.services-note {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding-bottom: 56px;
+}
+
+.services-note a {
+  color: var(--accent);
+}
+
+/* ---------- empty state (archive) ---------- */
 
 .empty-state {
   padding: 96px 0 128px;
