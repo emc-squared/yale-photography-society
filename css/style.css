@@ -303,6 +303,19 @@ img {
   .grid-3 { grid-template-columns: 1fr; }
 }
 
+.featured-thumb {
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #EDEBE6;
+}
+
+.featured-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ---------- board grid ---------- */
 
 .board-grid {
@@ -360,14 +373,23 @@ img {
 
 /* ---------- featured page slideshow ---------- */
 
+.slideshow-band {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background: linear-gradient(160deg, #06070a 0%, #16181f 55%, #06070a 100%);
+  padding: 48px 0;
+  margin-bottom: 56px;
+}
+
 .slideshow {
   position: relative;
-  width: 100%;
-  height: 560px;
-  overflow: hidden;
-  border-radius: 6px;
-  margin: 8px 0 56px;
-  background: #EDEBE6;
+  max-width: 1160px;
+  margin: 0 auto;
+  height: 620px;
 }
 
 .slideshow-track {
@@ -379,13 +401,19 @@ img {
 .slide {
   flex: 0 0 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  display: block;
+  border-radius: 3px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
 }
 
 .slide-arrow {
@@ -396,8 +424,9 @@ img {
   height: 44px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.85);
-  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  color: #fff;
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
@@ -408,7 +437,7 @@ img {
 }
 
 .slide-arrow:hover {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.22);
 }
 
 .slide-arrow.prev { left: 16px; }
@@ -416,7 +445,7 @@ img {
 
 .slide-dots {
   position: absolute;
-  bottom: 18px;
+  bottom: -32px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -429,7 +458,7 @@ img {
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
 
@@ -438,7 +467,8 @@ img {
 }
 
 @media (max-width: 640px) {
-  .slideshow { height: 340px; margin-bottom: 40px; }
+  .slideshow-band { padding: 28px 0 48px; }
+  .slideshow { height: 380px; }
   .slide-arrow { width: 36px; height: 36px; font-size: 18px; }
 }
 
