@@ -9,13 +9,11 @@ on the web for free.
 ```
 index.html        Home
 board.html        Board
-featured.html     Featured
-archive.html      Monthly Competition Archive (placeholder)
-interviews.html   Interviews (placeholder)
-commercial.html   Commercial (placeholder)
+featured.html     Featured (photo slideshow)
+commercial.html   Commercial Services
 join.html         Join us
 css/style.css     All styling
-js/main.js        Mobile nav toggle + mailing list form handling
+js/main.js        Mobile nav toggle, mailing list form, and featured slideshow
 ```
 
 ## 1. Push to GitHub
@@ -63,17 +61,18 @@ When you're ready:
 
 ## Things to swap in before launch
 
-- **Photos** — every `<div class="img-placeholder">` is a stand-in. Replace
-  with `<img src="images/your-photo.jpg" alt="...">`, keeping the same
-  wrapping element so sizing stays consistent. Put image files in `images/`.
+- **Photos** — board headshots still use `<div class="img-placeholder">`
+  stand-ins. Replace with `<img src="images/your-photo.jpg" alt="...">`,
+  keeping the same wrapping element so sizing stays consistent.
 - **Board page** (`board.html`) — one `.board-member` block per person: name,
   role, class year, specialty tag, headshot.
-- **Featured page** (`featured.html`) — one `.featured-item` block per photo,
-  update the season label in the page header each time you rotate it.
-- **Contact email** — currently `yalephotographysociety@yale.edu` in every
-  page's footer. Find-and-replace across all files if it should be different.
-- **Join us button** — the `href="#"` on the Sign up button in `join.html`
-  needs your actual form link (Google Form, Yale Connect, etc).
+- **Featured page** (`featured.html`) — the slideshow pulls from
+  `images/featured/`. To add or swap photos, drop a file in that folder and
+  add a matching `<div class="slide"><img src="images/featured/your-file.jpg" alt="..."></div>`
+  block inside `.slideshow-track` in `featured.html`. Update the theme label
+  in the page header each time you rotate it.
+- **Contact email** — currently `yalephotographysociety@elilists.yale.edu` in
+  every page's footer. Find-and-replace across all files if it should change.
 - **Mailing list form** — right now the footer form only validates the email
   client-side and shows a thank-you message; it doesn't send anywhere yet.
   Easiest options to wire it up for real:
