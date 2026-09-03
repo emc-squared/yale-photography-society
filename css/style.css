@@ -573,3 +573,40 @@ img {
 @media (max-width: 640px) {
   .site-footer .wrap { flex-direction: column; align-items: flex-start; }
 }
+
+/* ---------- page banner photos (board / commercial / join) ---------- */
+
+.page-banner {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  height: 420px;
+  overflow: hidden;
+}
+
+.page-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.page-banner-duo {
+  display: flex;
+  height: 100%;
+}
+
+.page-banner-duo > div {
+  flex: 1 1 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .page-banner { height: 260px; }
+  .page-banner-duo { flex-direction: column; }
+  .page-banner-duo > div { flex: 1 1 50%; }
+}
