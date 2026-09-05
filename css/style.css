@@ -163,6 +163,10 @@ img {
   max-width: 60ch;
 }
 
+.page-header .btn {
+  margin-top: 20px;
+}
+
 /* ---------- hero (home) ---------- */
 
 .hero-full {
